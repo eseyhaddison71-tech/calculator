@@ -1,132 +1,49 @@
-/* Reset */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-/* Center Calculator */
-body{
-    background:#ececec;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
+    <!-- Calculator -->
+    <div class="calculator">
 
-/* Calculator Body */
-.calculator{
-    width:380px;
-    background:#ffffff;
-    border:4px solid #000;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.25);
-}
+        <!-- Display Screen -->
+        <input type="text" id="display" readonly>
 
-/* Display Screen */
-input{
-    width:100%;
-    height:65px;
-    border:3px solid #000;
-    border-radius:8px;
-    font-size:30px;
-    text-align:right;
-    padding:10px;
-    margin-bottom:20px;
-    outline:none;
-    background:#f8f8f8;
-}
+        <!-- Number Pad -->
+        <div class="keys">
 
-/* Number Buttons */
-.keys{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
+            <button onclick="press('7')">7</button>
+            <button onclick="press('8')">8</button>
+            <button onclick="press('9')">9</button>
+            <button onclick="press('/')">/</button>
 
-.keys button{
-    height:70px;
-    border:2px solid #000;
-    border-radius:8px;
-    background:#ffffff;
-    font-size:28px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.2s;
-}
+            <button onclick="press('4')">4</button>
+            <button onclick="press('5')">5</button>
+            <button onclick="press('6')">6</button>
+            <button onclick="press('*')">*</button>
 
-.keys button:hover{
-    background:#e6e6e6;
-}
+            <button onclick="press('1')">1</button>
+            <button onclick="press('2')">2</button>
+            <button onclick="press('3')">3</button>
+            <button onclick="press('-')">-</button>
 
-.keys button:active{
-    transform:scale(0.95);
-}
+            <button onclick="press('0')">0</button>
+            <button onclick="press('.')">.</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="press('+')">+</button>
 
-/* Equal Button */
-.equal{
-    grid-column:4;
-    grid-row:2 / span 2;
-    background:#cfcfcf;
-    font-size:36px;
-}
+            <button class="equal" onclick="calculate()">=</button>
 
-.equal:hover{
-    background:#bdbdbd;
-}
+        </div>
 
-/* Operator Buttons */
-.operators{
-    margin-top:15px;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
+    </div>
 
-.operators button{
-    height:60px;
-    border:2px solid #000;
-    border-radius:8px;
-    background:#ffffff;
-    font-size:26px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.2s;
-}
+    <script src="index.js"></script>
 
-.operators button:hover{
-    background:#e6e6e6;
-}
-
-.operators button:active{
-    transform:scale(0.95);
-}
-
-/* Extra Buttons */
-.extras{
-    margin-top:15px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.extras button{
-    height:55px;
-    border:2px solid #000;
-    border-radius:8px;
-    background:#ffffff;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.extras button:hover{
-    background:#e6e6e6;
-}
-
-.extras button:active{
-    transform:scale(0.95);
-}
+</body>
+</html>
