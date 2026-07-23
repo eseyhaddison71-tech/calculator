@@ -1,6 +1,5 @@
 //get the display and preview input elements
 const display = document.getElementById("display");
-const result = document.getElementById("result");
 
 //adds the button value to the display
 function press(value) {
