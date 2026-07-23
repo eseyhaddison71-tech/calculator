@@ -1,3 +1,4 @@
+/* Reset */
 *{
     margin:0;
     padding:0;
@@ -5,55 +6,80 @@
     font-family:Arial, sans-serif;
 }
 
+/* Center Calculator */
 body{
     background:#ececec;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
 }
 
+/* Calculator Body */
 .calculator{
     width:380px;
-    border:4px solid black;
-    background:white;
+    background:#ffffff;
+    border:4px solid #000;
+    border-radius:15px;
     padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
 }
 
+/* Display Screen */
 input{
     width:100%;
-    height:55px;
-    font-size:28px;
+    height:65px;
+    border:3px solid #000;
+    border-radius:8px;
+    font-size:30px;
     text-align:right;
-    padding-right:10px;
-    border:3px solid black;
+    padding:10px;
     margin-bottom:20px;
+    outline:none;
+    background:#f8f8f8;
 }
 
+/* Number Buttons */
 .keys{
     display:grid;
-    grid-template-columns:repeat(4,70px);
-    grid-auto-rows:70px;
+    grid-template-columns:repeat(4,1fr);
     gap:10px;
-    justify-content:center;
 }
 
 .keys button{
+    height:70px;
+    border:2px solid #000;
+    border-radius:8px;
+    background:#ffffff;
     font-size:28px;
-    border:2px solid black;
-    background:white;
+    font-weight:bold;
     cursor:pointer;
+    transition:0.2s;
 }
 
+.keys button:hover{
+    background:#e6e6e6;
+}
+
+.keys button:active{
+    transform:scale(0.95);
+}
+
+/* Equal Button */
 .equal{
     grid-column:4;
-    grid-row:2/span 2;
-    background:#d9d9d9;
+    grid-row:2 / span 2;
+    background:#cfcfcf;
     font-size:36px;
 }
 
+.equal:hover{
+    background:#bdbdbd;
+}
+
+/* Operator Buttons */
 .operators{
-    margin-top:20px;
+    margin-top:15px;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:10px;
@@ -61,12 +87,46 @@ input{
 
 .operators button{
     height:60px;
-    font-size:28px;
-    border:2px solid black;
-    background:white;
+    border:2px solid #000;
+    border-radius:8px;
+    background:#ffffff;
+    font-size:26px;
+    font-weight:bold;
     cursor:pointer;
+    transition:0.2s;
 }
 
-button:hover{
-    background:#dddddd;
+.operators button:hover{
+    background:#e6e6e6;
+}
+
+.operators button:active{
+    transform:scale(0.95);
+}
+
+/* Extra Buttons */
+.extras{
+    margin-top:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.extras button{
+    height:55px;
+    border:2px solid #000;
+    border-radius:8px;
+    background:#ffffff;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.extras button:hover{
+    background:#e6e6e6;
+}
+
+.extras button:active{
+    transform:scale(0.95);
 }
